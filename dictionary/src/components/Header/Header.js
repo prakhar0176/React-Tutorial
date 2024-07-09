@@ -7,14 +7,17 @@ import categories from '../../data/category';
 const Header = ({ category, setCategory, word, setWord }) => {
     const darkTheme = createTheme({
         palette: {
-            text: {
-                primary: {
-                    main: '#fff',
-                },
+            primary: {
+                main: '#fff',
             },
             mode: 'dark'
         },
     });
+
+    const handleChange = (language) => {
+        setCategory(language);
+        setWord("");
+    }
     return (
         <div className='header'>
             <span className='title'>{word ? word : 'Word Hunt'}</span>
@@ -22,10 +25,11 @@ const Header = ({ category, setCategory, word, setWord }) => {
                 <ThemeProvider theme={darkTheme}>
                     <TextField className='search' id="standard-basic" variant="standard" label="Search a Word" value={word} onChange={(e) => setWord(e.target.value)} />
                     <TextField
+                        className='select'
                         select
                         label="Language"
                         value={category}
-                        onChange={(e) => setCategory(e.target.value)}
+                        onChange={(e) => handleChange(e.target.value)}
                         variant="standard"
                     >
                         {/* {
