@@ -24,7 +24,7 @@ function App() {
     }
   };
 
-  console.log(meaning);
+  // console.log(meaning);
 
 
   useEffect(() => {
@@ -35,7 +35,7 @@ function App() {
     <div className="App" style={{ height: '100vh', backgroundColor: '#282c34', color: 'white' }}>
       <Container maxWidth="xl" style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
         <Header category={category} setCategory={setCategory} word={word} setWord={setWord} />
-        <Definitions />
+        {meaning && (<Definitions word={word} meanings={meaning} category={category} />)}
       </Container>
     </div>
   );
