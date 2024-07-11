@@ -4,13 +4,13 @@ import { MenuItem, TextField } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import categories from '../../data/category';
 
-const Header = ({ category, setCategory, word, setWord }) => {
+const Header = ({ category, setCategory, word, setWord, LightMode }) => {
     const darkTheme = createTheme({
         palette: {
             primary: {
-                main: '#fff',
+                main: LightMode ? '#000' : '#fff',
             },
-            mode: 'dark'
+            mode: LightMode ? 'light' : 'dark'
         },
     });
 
@@ -32,12 +32,6 @@ const Header = ({ category, setCategory, word, setWord }) => {
                         onChange={(e) => handleChange(e.target.value)}
                         variant="standard"
                     >
-                        {/* {
-                            categories.map((option) => {
-                                <MenuItem key={option.label}>{option.value}</MenuItem>
-                            })
-                        } */}
-
                         {
                             categories.map((option) => (
                                 <MenuItem key={option.label} value={option.label}>{option.value}</MenuItem>

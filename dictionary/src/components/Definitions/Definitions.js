@@ -1,7 +1,7 @@
 import React from 'react'
 import './Definitions.css';
 
-function Definitions({ word, meanings, category }) {
+function Definitions({ word, meanings, category, LightMode }) {
     return (
         <div className='meanings'>
             {
@@ -17,7 +17,7 @@ function Definitions({ word, meanings, category }) {
                 meanings.map((mean) =>
                     mean.meanings.map((item) =>
                         item.definitions.map((def) =>
-                            <div className='singleMean' style={{ backgroundColor: "white", color: "black" }}>
+                            <div className='singleMean' style={{ backgroundColor: LightMode ? "#3b5360" : "white", color: LightMode ? "white" : "black" }}>
                                 <b>{def.definition}</b>
                                 <hr style={{ backgroundColor: "black", width: "100%" }} />
                                 {
@@ -28,7 +28,7 @@ function Definitions({ word, meanings, category }) {
                                     )
                                 }
                                 {
-                                    def.synonyms && (
+                                    def.synonyms.length > 0 && (
                                         <span>
                                             <b>Synonyms: </b>
                                             {def.synonyms.map((s) => `${s}`)}
