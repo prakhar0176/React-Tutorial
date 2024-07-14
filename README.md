@@ -1,5 +1,5 @@
 Initial Page Load
-![image](https://github.com/user-attachments/assets/cc8d874c-880a-4b62-b561-5597e6aa5040)
+![image](https://github.com/user-attachments/assets/dfd9ca7c-5d93-4fee-9395-ed5928941b36)
 
 Search Word and Get Meaning
 ![image](https://github.com/user-attachments/assets/c29f837b-5ed1-4b80-983e-780fde7b71a7)
