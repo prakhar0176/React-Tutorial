@@ -73,14 +73,12 @@ function App() {
     }
   };
 
-  console.log("This is my word---------->", word);
+  console.log(meaning);
 
 
   useEffect(() => {
-    if (word && category) {
-      dictionaryApi();
-    }
-  }, [word, category]);
+    dictionaryApi();
+  }, [word, category])
 
   return (
     <div className="App" style={{ height: '100vh', backgroundColor: LightMode ? '#fff' : '#282c34', color: LightMode ? 'Black' : 'white', transition: "all 0.5s linear" }}>

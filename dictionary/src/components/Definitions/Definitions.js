@@ -2,7 +2,6 @@ import React from 'react'
 import './Definitions.css';
 
 function Definitions({ word, meanings, category, LightMode }) {
-    // console.log(word, "\n", meanings, "\n", category);
     return (
         <div className='meanings'>
             {

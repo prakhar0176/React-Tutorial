@@ -3,8 +3,6 @@ import './Header.css';
 import { MenuItem, TextField } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import categories from '../../data/category';
-import debounce from 'lodash/debounce';
-
 
 const Header = ({ category, setCategory, word, setWord, LightMode }) => {
     const darkTheme = createTheme({
@@ -20,16 +18,12 @@ const Header = ({ category, setCategory, word, setWord, LightMode }) => {
         setCategory(language);
         setWord("");
     }
-
-    const handleText = debounce((text) => {
-        setWord(text)
-    }, 1000);
     return (
         <div className='header'>
             <span className='title'>{word ? word : 'Word Hunt'}</span>
             <div className='inputs'>
                 <ThemeProvider theme={darkTheme}>
-                    <TextField className='search' id="standard-basic" variant="standard" label="Search a Word" onChange={(e) => handleText(e.target.value)} />
+                    <TextField className='search' id="standard-basic" variant="standard" label="Search a Word" value={word} onChange={(e) => setWord(e.target.value)} />
                     <TextField
                         className='select'
                         select
